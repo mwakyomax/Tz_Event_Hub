@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania Event Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Tanzania Event Hub Logo">
+                <h1>Tanzania Event Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Discover Amazing Events in Tanzania</h2>
+            <p>Find and attend the best concerts, festivals, workshops and more across the country</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search events...">
+                <select id="locationFilter">
+                    <option value="">All Locations</option>
+                    <option value="Dar es Salaam">Dar es Salaam</option>
+                    <option value="Dodoma">Dodoma</option>
+                    <option value="Arusha">Arusha</option>
+                    <option value="Mwanza">Mwanza</option>
+                    <option value="Zanzibar">Zanzibar</option>
+                </select>
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Music">Music</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Business">Business</option>
+                    <option value="Education">Education</option>
+                    <option value="Cultural">Cultural</option>
+                </select>
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <div class="events-grid" id="eventsContainer">
+                <!-- Events will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Tanzania Event Hub</h2>
+            <p>Tanzania Event Hub is the premier platform for discovering and promoting events across Tanzania. We connect event organizers with attendees, making it easy to find the best events happening near you.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Events Listed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Attendees</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Event Organizers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tanzania Event Hub</h3>
+                    <p>Your gateway to the best events in Tanzania</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tanzania Event Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Login/Register -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="authForms">
+                <div id="loginForm" class="auth-form">
+                    <h2>Login</h2>
+                    <form id="loginFormElement">
+                        <input type="text" id="loginUsername" placeholder="Username or Email" required>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+                </div>
+                <div id="registerForm" class="auth-form" style="display:none;">
+                    <h2>Register</h2>
+                    <form id="registerFormElement">
+                        <input type="text" id="regUsername" placeholder="Username" required>
+                        <input type="email" id="regEmail" placeholder="Email" required>
+                        <input type="password" id="regPassword" placeholder="Password" required>
+                        <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+                        <button type="submit">Register</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
